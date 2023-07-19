@@ -2,3 +2,35 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  // border-radius: 5em;
+  box-sizing: border-box;
+
+  .navbar {
+    flex: 1;
+    background-color: red;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+  }
+
+  .profile-section {
+    flex: 5;
+    background-color: rgb(198, 164, 164);
+  }
+
+  .charts {
+    flex: 10;
+    background-color: rgb(199, 187, 187);
+  }
+
+  .slider {
+    flex: 5;
+    background-color: rgb(60, 50, 50);
+  }
+}
