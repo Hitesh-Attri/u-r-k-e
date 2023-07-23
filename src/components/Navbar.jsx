@@ -44,7 +44,7 @@ const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   // width: drawerWidth,
-  width: "5%",
+  // width: "5%",
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
@@ -60,59 +60,55 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MiniDrawer() {
   return (
-    <Box sx={{ display: "flex" }}>
-      // <CssBaseline />
-      <Drawer variant="permanent" open={false}>
+    <Drawer variant="permanent" open={false}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItem: "center",
+          flexDirection: "column",
+          height: "100%",
+        }}
+      >
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItem: "center",
             flexDirection: "column",
-            height: "100%",
+            alignItem: "center",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              // justifyContent: "space-between",
-              alignItem: "center",
-            }}
-          >
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <Button>
-                <img src={logo} height={30} />
-              </Button>
-              <Button sx={{ marginBottom: 4 }}>
-                <SearchRoundedIcon />
-              </Button>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <Button variant="contained" sx={{ marginBottom: 2 }}>
-                <Home />
-              </Button>
-              <Button sx={{ marginBottom: 2 }}>
-                <img src={card} height={30} />
-              </Button>
-              <Button sx={{ marginBottom: 2 }}>
-                <ListAltRounded />
-              </Button>
-              <Button sx={{ marginBottom: 2 }}>
-                <PersonRounded />
-              </Button>
-            </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Button>
+              <img src={logo} height={30} />
+            </Button>
+            <Button sx={{ marginBottom: 4 }}>
+              <SearchRoundedIcon />
+            </Button>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <Button sx={{ marginBottom: 2 }}>
-              <NotificationsTwoTone />
+            <Button variant="contained" sx={{ marginBottom: 2 }}>
+              <Home />
             </Button>
             <Button sx={{ marginBottom: 2 }}>
-              <LogoutTwoTone />
+              <img src={card} height={30} />
+            </Button>
+            <Button sx={{ marginBottom: 2 }}>
+              <ListAltRounded />
+            </Button>
+            <Button sx={{ marginBottom: 2 }}>
+              <PersonRounded />
             </Button>
           </div>
         </div>
-      </Drawer>
-    </Box>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Button sx={{ marginBottom: 2 }}>
+            <NotificationsTwoTone />
+          </Button>
+          <Button sx={{ marginBottom: 2 }}>
+            <LogoutTwoTone />
+          </Button>
+        </div>
+      </div>
+    </Drawer>
   );
 }
